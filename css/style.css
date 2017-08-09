@@ -1,0 +1,158 @@
+body{
+			font-family: "Arial";
+}
+#header {
+    text-align: center;
+    background-color: darkgreen;
+    color: white;
+    padding: 10px;
+    font-family: "Arial";
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 20px;
+	}
+table {
+    width: 99%;
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    font-size: 13px;
+	}
+thead {
+    font-size: 14px;
+}
+th {
+    height: 40px;
+    border: 1px solid black !important;
+}
+fieldset {
+    width: 60%;
+    margin: 20px auto;
+    border-radius: 10px;
+	}
+input {
+    width: 215px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px 0px;
+}
+button {
+    border: none;
+    color: #fff;
+    background-color: darkgreen;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+    margin-top: 10px;
+}
+#view {
+    border: none;
+    color: #fff;
+    background-color: darkgreen;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+a {
+    text-decoration: none;
+}
+button:hover, #view:hover{
+	background-color: red;
+}
+.container {
+    background-image: url(http://localhost/webdesign/images/logo.jpg);
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 600px;
+    float: right;
+    width: 80%;
+    min-height: 500px;
+}
+#Data,#Data td, #Data th {
+    border: 1px solid black;
+    border-style: dotted;
+    margin-top: 52px;
+}
+img {
+    width: 25px;
+}
+.menu {
+    float: right;
+    width: 20%;
+    height: 100%;
+    background: #a9a9aa;
+    position: fixed;
+}
+ul {
+    background-color: darkgreen;
+    padding-left: 10px;
+}
+ul li {
+    list-style: none;
+    padding: 5px;
+    border-top: 1px solid #419241;
+    border-bottom: 1px solid #003200;
+    transition: padding 0.7s;
+}
+ul li:hover {
+    background-color: red;
+    padding-left: 20px;
+}
+.active {
+    background-color: red;
+    padding-left: 5px;
+}
+ul li a{
+    color: white;
+    display: block;
+}
+.menu p{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.add {
+    width: 100%;
+    margin: 2px 0px;
+}
+.add a {
+    float: right;
+    margin: 12px 0;
+}
+.add #view{
+    border-radius: 0;
+}
+#front-logo {
+    width: 250px;
+}
+.panel-title {
+    text-align: center;
+    font-family: "Arial";
+    color: Red;
+}
+.login {
+    width: 30%;
+    text-align: center;
+    padding: 15px;
+}
+p#username {
+    float: right;
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 12px;
+}
+#username a {
+    color: red;
+}
+#username a:hover {
+    color: yellow;
+}
+.sub-menu {
+    width: 50%;
+    padding-left: 10px;
+}
