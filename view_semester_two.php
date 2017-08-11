@@ -14,7 +14,7 @@ if(isset($_GET['delete_id']))
 <!DOCTYPE html>
 <html>
 <head>
-	<title>YR1 semester one data</title>
+	<title>YR1 semester two data</title>
 	<link rel="icon" type="image/png" href="images/logo.jpg" sizes="32x32">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -92,11 +92,11 @@ if(isset($_GET['delete_id']))
       </div>
 
 <script type="text/javascript">
- 	function edt_id(id)
+ 	function edit_id(id)
     {
      if(confirm('Are you sure you want to edit this record?'))
      {
-      window.location.href='update-results-data.php?edit_id='+id;
+      window.location.href='update-semester-two-data.php?edit_id='+id;
      }
     }
     function delete_id(id)

@@ -2,30 +2,28 @@
 include_once 'connection.php';
 if(isset($_GET['edit_id']))
 {
- $sql_query="SELECT * FROM financial_table WHERE user_id=".$_GET['edit_id'];
+ $sql_query="SELECT * FROM y1semester2 WHERE studentNO=".$_GET['edit_id'];
  $result_set=mysql_query($sql_query);
  $fetched_row=mysql_fetch_array($result_set);
 }
 if(isset($_POST['btn-update']))
 {
-// variables for input data
+/// variables for input data
  $student_fname = $_POST['student_fname'];
  $student_lname = $_POST['student_lname'];
  $student_no = $_POST['student_no'];
- $D_O_B = $_POST['D_O_B'];
- $Amount_paid = $_POST['Amount_paid'];
- $Balance = $_POST['Balance'];
- $Email = $_POST['Email'];
- $Next_of_kin = $_POST['Next_of_kin'];
- $Sponsor = $_POST['Sponsor'];
- $Telephone = $_POST['Telephone'];
- $Sponsors_contact = $_POST['Sponsors_contact'];
  $Reg_No = $_POST['Reg_No'];
+ $SAAD = $_POST['SAAD'];
+ $Calculus = $_POST['Calculus'];
+ $OOP = $_POST['OOP'];
+ $N_Analysis= $_POST['Numerical_Analysis'];
+ $DIM = $_POST['DIM'];
+
 
  // variables for input data
 
  // sql query for update data into database
- $sql_query = "UPDATE financial_table SET student_fname='$student_fname',student_lname='$student_lname',student_no='$student_no',D_O_B='$D_O_B', Amount_paid='$Amount_paid',Balance='$Balance',Email='$Email',Next_of_kin='$Next_of_kin',Sponsor='$Sponsor', Telephone='$Telephone',Sponsors_contact='$Sponsors_contact',Reg_No='$Reg_No' WHERE user_id=".$_GET['edit_id'];
+ $sql_query = "UPDATE y1semester2 SET First Name='$student_fname',Last Name='$student_lname',studentNO='$student_no',BIS1206='$SAAD ', MTH1203=' $Calculus ',CSC1214=' $OOP',MTH2203=' $N_Analysis',BIS1204=' $DIM,RegNo='$Reg_No' WHERE studentNO=".$_GET['edit_id'];
  // sql query for update data into database
  
  // sql query execution function
@@ -34,7 +32,7 @@ if(isset($_POST['btn-update']))
   ?>
   <script type="text/javascript">
   alert('Data Are Updated Successfully');
-  window.location.href='financial-data.php';
+  window.location.href='view_semester_two.php';
   </script>
   <?php
  }
@@ -50,13 +48,13 @@ if(isset($_POST['btn-update']))
 }
 if(isset($_POST['btn-cancel']))
 {
- header("Location: financial-data.php");
+ header("Location: view_semester_two.php");
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Financial Form|Update</title>
+  <title>SemesterForm|Update</title>
   <link rel="icon" type="image/png" href="images/logo.jpg" sizes="32x32">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -67,7 +65,7 @@ if(isset($_POST['btn-cancel']))
    //USERNAME & SESSION BEING CALLED AS A FUNCTION FROM CONNECTION FILE
    if(loggedIn())
    {
-     $name = getUserField('StaffName');
+     $name = getUserField('adminName');
      echo '<p id="username">'.$name.' <a href="logout.php"> Logout</a><p>';
 
    }else{
@@ -84,54 +82,41 @@ if(isset($_POST['btn-cancel']))
       <tbody>
         <tr>
           <td>Student Name</td>
-          <td><input type="text" name="student_fname" placeholder="First Name" value="<?php echo $fetched_row['student_fname']; ?>"></td>
+          <td><input type="text" name="student_fname"  value="<?php echo $fetched_row['FirstName']; ?>"></td>
         </tr>
         <tr>
           <td></td>
-          <td><input type="" name="student_lname" placeholder="Second Name" value="<?php echo $fetched_row['student_lname']; ?>"></td>
+          <td><input type="" name="student_lname"  value="<?php echo $fetched_row['LastName']; ?>"></td>
         </tr>
         <tr>
           <td>Student No</td>
-          <td><input type="text" name="student_no" placeholder="Student Number" value="<?php echo $fetched_row['student_no']; ?>"></td>
+          <td><input type="text" name="student_no"  value="<?php echo $fetched_row['studentNO']; ?>"></td>
+        </tr><tr>
+					<td>Registration No</td>
+					<td><input type="text" name="Reg_No" value="<?php echo $fetched_row['RegNo']; ?>"  required/></td>
+				</tr>
+        <tr>
+          <td>SAAD</td>
+          <td><input type="number" name="SAAD" value="<?php echo $fetched_row['BIS1206']; ?>" required/></td>
         </tr>
         <tr>
-          <td>Date of birth</td>
-          <td><input type="date" name="D_O_B" placeholder="Date of Birth" value="<?php echo $fetched_row['D_O_B']; ?>"></td>
+          <td>Calculus one</td>
+          <td><input type="number" name="Calculus" value="<?php echo $fetched_row['MTH1203']; ?>" required/></td>
         </tr>
         <tr>
-          <td>Amount paid</td>
-          <td><input type="text" name="Amount_paid" placeholder="Amount Paid" value="<?php echo $fetched_row['Amount_paid']; ?>"></td>
+          <td>Object Oriented Programming</td>
+          <td><input type="number" name="OOP" value="<?php echo $fetched_row['CSC1214']; ?>" required/></td>
         </tr>
         <tr>
-          <td>Balance</td>
-          <td><input type="text" name="Balance" placeholder="Balance" value="<?php echo $fetched_row['Balance']; ?>"></td>
+          <td>Numerical_Analysis</td>
+          <td><input type="number" name="Numerical_Analysis" value="<?php echo $fetched_row['MTH2203']; ?>" required/></td>
         </tr>
         <tr>
-          <td>Email</td>
-          <td><input type="text" name="Email" placeholder="Email Address" value="<?php echo $fetched_row['Email']; ?>"></td>
+          <td>DIM</td>
+          <td><input type="number" name="DIM" value="<?php echo $fetched_row['BIS1204']; ?>" required/></td>
         </tr>
         <tr>
-          <td>Next of Kin</td>
-          <td><input type="text" name="Next_of_kin" placeholder="Next of Kin" value="<?php echo $fetched_row['Next_of_kin']; ?>"></td>
-        </tr>
-        <tr>
-          <td>Sponsor</td>
-          <td><input type="text" name="Sponsor" placeholder="Sponsor's Name" value="<?php echo $fetched_row['Sponsors_contact']; ?>"></td>
-        </tr>
-        <tr>
-          <td>Telephone</td>
-          <td><input type="text" name="Telephone" placeholder="Cell Number" value="<?php echo $fetched_row['Telephone']; ?>"></td>
-        </tr>
-        <tr>
-          <td>Sponsor's contact</td>
-          <td><input type="text" name="Sponsors_contact" placeholder="Sponsor's contact" value="<?php echo $fetched_row['Sponsors_contact']; ?>"></td>
-        </tr>
-        <tr>
-          <td>Registration No</td>
-          <td><input type="text" name="Reg_No" placeholder="Registration Number" value="<?php echo $fetched_row['Reg_No']; ?>"></td>
-        </tr>
-        <tr>
-          <td colspan="2"><center><button type="submit" name="btn-update">Update</button><a href="financial-data.php"><lable id="view" name="btn-cancel">Cancel</label></a></center></td>
+          <td colspan="2"><center><button type="submit" name="btn-update">Submit</button></center></td>
         </tr>
       </tbody>
     </table>
@@ -140,12 +125,14 @@ if(isset($_POST['btn-cancel']))
   
 </div>
 <div class="menu">
+      
       <p align="center">Main Menu</p>
-        <ul>
-          <li><a href="finance.php">Financial Form</a></li>
-          <li class="active"><a href="financial-data.php">Financial Data</a></li>  
-          <li><a href="results.php">Result Form</a></li>
-          <li><a href="results-data.php">Results Data</a></li>
+      	<ul>
+          <li><a href="register-student.php">Register Student</a></li>
+	      	<li><a href="view-students-data.php">View Students Data</a></li>
+      		<li><a href="view-reports.php">View Reports</a></li>
+		    <li><a href="course-outline.php">Course Outline</a></li>
+		    <li class="active"><a href="results-data.php">Results Data</a></li>
         </ul>
       </div>
 </body>

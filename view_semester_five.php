@@ -14,7 +14,7 @@ if(isset($_GET['delete_id']))
 <!DOCTYPE html>
 <html>
 <head>
-	<title>YR1 semester one data</title>
+	<title>YR3 semester one data</title>
 	<link rel="icon" type="image/png" href="images/logo.jpg" sizes="32x32">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
