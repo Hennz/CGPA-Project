@@ -46,7 +46,7 @@ if(isset($_POST['btn-save']))
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div id="header">Results Form
+<div id="header">Students Report
 <?php
 
 	 //USERNAME
