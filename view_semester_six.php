@@ -92,11 +92,11 @@ if(isset($_GET['delete_id']))
       </div>
 
 <script type="text/javascript">
- 	function edt_id(id)
+ 	function edit_id(id)
     {
      if(confirm('Are you sure you want to edit this record?'))
      {
-      window.location.href='update-results-data.php?edit_id='+id;
+      window.location.href='update-semester-six-data.php?edit_id='+id;
      }
     }
     function delete_id(id)
