@@ -22,7 +22,7 @@ $student_no = $_POST['student_no'];
  // variables for input data
 
  // sql query for update data into database
- $sql_query = "UPDATE y1semester2 SET FirstName='$student_fname',LastName='$student_lname',studentNO='$student_no',CSC2100=' $Data_Structures_and_Algorithms ', BSE2105=' $Formal_Methods_Software_Engineering  ',BSE2103=' $Computer_Networks ',CSC2114=' $Artificial_Intelligence',MTH3105='  $Discrete_Mathematics,RegNo='$Reg_No' WHERE studentNO=".$_GET['edit_id'];
+ $sql_query = "UPDATE y2semester1 SET FirstName='$student_fname',LastName='$student_lname',studentNO='$student_no',CSC2100=' $Data_Structures_and_Algorithms ', BSE2105=' $Formal_Methods_Software_Engineering  ',BSE2103=' $Computer_Networks ',CSC2114=' $Artificial_Intelligence',MTH3105='  $Discrete_Mathematics,RegNo='$Reg_No' WHERE studentNO=".$_GET['edit_id'];
  // sql query for update data into database
  
  // sql query execution function
